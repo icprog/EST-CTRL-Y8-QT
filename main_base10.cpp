@@ -1,5 +1,3 @@
-#include <QGraphicsView>
-#include <QGraphicsScene>
 #include <QTransform>
 #include <QMessageBox>
 
@@ -24,6 +22,7 @@ CMainBase10::CMainBase10(QWidget *parent) :
 
     if(lbCompletionTips)
     {
+        lbCompletionTips->setGeometry(0,0,240,50);
         lbCompletionTips->move(560,105);
         if(g_dbsys.operationx.keyInstalled)     //already installed password
             lbCompletionTips->setVisible(false);

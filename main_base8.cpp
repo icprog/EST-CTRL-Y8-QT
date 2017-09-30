@@ -17,6 +17,7 @@ CMainBase8::CMainBase8(QWidget *parent) :
 
     if(lbCompletionTips)
     {
+        lbCompletionTips->setGeometry(0,0,240,50);
         lbCompletionTips->move(100,510);
         if(g_dbsys.operationx.keyInstalled == 1)
             lbCompletionTips->setVisible(false);

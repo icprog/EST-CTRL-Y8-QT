@@ -88,13 +88,6 @@ CFaceBase::CFaceBase(QWidget *parent) :
 
 void CFaceBase::OnViewDirChange(int sAngle)
 {
-
-//    lbBackGround->setGeometry(0, 0, g_sysWidth, g_sysHeight);
-//    lbBackGround->setStyleSheet(g_skinBase->GetStyleMapStr("SYS_STR_BACK_FACE"));
-//    stInfo->setGeometry(0, 0, g_sysWidth, SYS_HEI(50));
-//    progressBar->setGeometry(0, SYS_HEI(0),  SYS_WID(400), SYS_HEI(40));
-//    stHospital->setGeometry(20, 0, g_sysWidth, SYS_HEI(80));
-
     switch(sAngle)
     {
     case VIEW_DIR_NORMAL:
@@ -130,7 +123,7 @@ void CFaceBase::setProgressBar(int mPercent)
     QCoreApplication::processEvents();
 
     //测试启动画面，延时
-    QTest::qSleep(250);
+    //QTest::qSleep(250);
 }
 
 void CFaceBase::showEvent(QShowEvent *)

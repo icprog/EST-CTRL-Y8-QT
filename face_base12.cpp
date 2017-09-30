@@ -39,11 +39,6 @@ CFaceBase12::CFaceBase12( QWidget* parent):
 
     progressBar->setStyleSheet("QProgressBar{ background:transparent; text-align: center;color:blue}"
                                "QProgressBar::chunk {background-color: green;width: 10px;margin: 1px;}");
-    //progressBar->setGeometry(SYS_WID(38 ), SYS_HEI(12),  SYS_WID(320), SYS_HEI(32));
-    //barView->setGeometry(SYS_WID(574 ),0,SYS_WID(60),g_sysHeight);
-    //barView->rotate(90);
-    //barView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
-    //barView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
 
     versionView->setGeometry(SYS_WID(680 ),0,SYS_WID(100),g_sysWidth);
     versionView->rotate(90);
@@ -59,7 +54,7 @@ void CFaceBase12::OnViewDirChange(int sAngle)
     case VIEW_DIR_NORMAL:
         lbBackGround->setStyleSheet(g_skinBase->GetStyleMapStr("SYS_STR_BACK_FACE_V"));
         progressBar->setGeometry(SYS_HEI(0 ), SYS_WID(12),  SYS_HEI(320), SYS_WID(32));
-        barView->setGeometry(SYS_HEI(574 ),0,SYS_HEI(60),g_sysHeight);
+        barView->setGeometry(SYS_WID(574 ),0,SYS_WID(60),g_sysHeight);
         barView->rotate(90);
         break;
     case VIEW_DIR_LEFT:
@@ -72,9 +67,6 @@ void CFaceBase12::OnViewDirChange(int sAngle)
         progressBar->setGeometry(SYS_HEI(0 ), SYS_WID(11),  SYS_HEI(320), SYS_WID(32));
         barView->setGeometry(SYS_WID(0 ),SYS_HEI(376 ),g_sysWidth,SYS_HEI(60));
         barView->rotate(180);
-        /*
-        progressBar->setGeometry(SYS_WID(38 ), SYS_HEI(12),  SYS_WID(320), SYS_HEI(32));
-        barView->setGeometry(SYS_WID(574 ),0,SYS_WID(60),g_sysHeight);*/
         break;
     case VIEW_DIR_R180:
         break;

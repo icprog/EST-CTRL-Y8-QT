@@ -16,9 +16,9 @@ CMainBase::CMainBase(QWidget *parent) :
     if(RsMgr->g_PwdVersion == PWD_VERSION_2)
     {
         lbCompletionTips = new QPushButton(this);
-        lbCompletionTips->setGeometry(0,0,240,50);
+        //lbCompletionTips->setGeometry(0,0,240,50);
         lbCompletionTips->setText(QApplication::translate("CMainBase", "Completion Tips" ));
-        lbCompletionTips->setStyleSheet("background-color:white;color:red");
+        lbCompletionTips->setStyleSheet("background-color:white;color:red ;border : 1px solid green;");
         lbCompletionTips->setFont(font);
         connect(lbCompletionTips,SIGNAL(pressed()),this,SLOT(OnCompletionTip()));
     }

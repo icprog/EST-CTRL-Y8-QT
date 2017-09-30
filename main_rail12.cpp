@@ -20,8 +20,6 @@ CMainRail12::CMainRail12(QWidget *parent) :
 
     OnViewDirChange(g_systemDb->g_startAngle);        //显示视角切换
 
-    //测试使用，临时关闭出厂前输入密码的提示    
-    //lbCompletionTips->setVisible(false);
 }
 
 void CMainRail12::myPopupPosInit()

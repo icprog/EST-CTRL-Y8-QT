@@ -27,7 +27,8 @@ protected:
     QGraphicsView   * viewNet;      //用于12寸系统的网络图标显示
     QGraphicsView   * viewPower;    //用于12寸系统的程序关闭按钮，一般用于PAD上显示
     QGraphicsView   * viewSim;      //用于运动模拟，测试使用。
-    QGraphicsView   * viewCurtain;  //用于运动模拟，测试使用。
+    QGraphicsView   * viewCurtain;  //用于光幕开关按钮
+    QGraphicsView   * viewNotify;  //用于运动模拟，测试使用。
 
 public slots:
 

@@ -11,21 +11,10 @@ CMainBase12::CMainBase12(QWidget *parent) :
     myViewInit();               //视图对象初始化
     mySceneInit();              //场景初始化
 
-    QPalette pal = palette();   //设置背景色
-    pal.setColor(QPalette::Background, QColor(208,235,245));
-    setPalette(pal);
-
     frameBack = new QFrame(this);
     frameBack->setGeometry(0,0,g_sysWidth,g_sysHeight);
     frameBack->setStyleSheet("QFrame{ border-image: url(:/QRes/8010/png00/background-v.png);}");
     frameBack->lower();
-
-    if(lbCompletionTips)
-    {
-        lbCompletionTips->move(100,510);
-        if(g_dbsys.operationx.keyInstalled == 1)
-            lbCompletionTips->setVisible(false);
-    }
 }
 
 //隐藏弹出框
@@ -197,6 +186,16 @@ void CMainBase12::myViewInit()
     viewCurtain->setStyleSheet("background:transparent");
     viewCurtain->setVisible(false);
 
+    viewNotify = new QGraphicsView(this);
+    viewNotify->setObjectName(QString::fromUtf8("viewNotify"));
+    viewNotify->setGeometry(PopInfoPos[SYS_POPUP_NOTIFY][m_iViewDir]);
+    viewNotify->setResizeAnchor( QGraphicsView::AnchorViewCenter);
+    viewNotify->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    viewNotify->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    if(g_mainCfg->value("ShowPartBackColor",false).toInt() == false)
+        viewNotify->setStyleSheet("background:transparent");
+    else
+        viewNotify->setStyleSheet("background-color:cyan");
 
     viewStatus->setStyleSheet("background: transparent");
     viewStatus->raise();
@@ -255,6 +254,13 @@ void CMainBase12::mySceneInit()
     pSceneArray[SYS_POPUP_TECH] = new QGraphicsScene(this);
     pSceneArray[SYS_POPUP_TECH]->addWidget(RsMgr->g_techBase);
 
+    //光幕控制模块
+    lbCompletionTips->setParent(NULL);
+    lbCompletionTips->setGeometry(0,0,240,50);
+    pSceneArray[SYS_POPUP_NOTIFY] = new QGraphicsScene(this);
+    pSceneArray[SYS_POPUP_NOTIFY]->addWidget(lbCompletionTips);
+
+
     viewMenu->setScene(pSceneArray[SYS_POPUP_MENU]);
     viewTitle->setScene(pSceneArray[SYS_POPUP_TITLE]);
     viewInfo->setScene(pSceneArray[SYS_POPUP_INFO]);
@@ -267,6 +273,7 @@ void CMainBase12::mySceneInit()
     viewSim->setScene(pSceneArray[SYS_POPUP_SIM]);
     viewCurtain->setScene(pSceneArray[SYS_POPUP_CURTAIN]);
     viewTech->setScene(pSceneArray[SYS_POPUP_TECH]);
+    viewNotify->setScene(pSceneArray[SYS_POPUP_NOTIFY]);
 }
 
 void CMainBase12::showEvent(QShowEvent *event)
@@ -307,12 +314,23 @@ void CMainBase12::showEvent(QShowEvent *event)
     //判断显示网络链接
     if(g_netBase)
     {
-
         if(g_dbsys.utility.mNetShow)
             g_netBase->setVisible(true);
     }
 
     CMainBase::showEvent(event);
+
+
+    if(g_dbsys.operationx.keyInstalled == 1)
+    {
+        viewNotify->setVisible(false);
+    }else
+    {
+        viewNotify->raise();
+        viewNotify->setVisible(true);
+    }
+
+
 }
 void CMainBase12::hideEvent(QHideEvent *event)
 {
@@ -391,6 +409,10 @@ void CMainBase12::OnViewDirChange(int viewPoint)
     //旋转按键界面
     viewTech->rotate(iRotateDegree);
     viewTech->setGeometry(PopInfoPos[SYS_POPUP_TECH][m_iViewDir]);
+
+    //旋转按键界面
+    viewNotify->rotate(iRotateDegree);
+    viewNotify->setGeometry(PopInfoPos[SYS_POPUP_NOTIFY][m_iViewDir]);
 
     //旋转弹出框
     viewPopup->hide();
@@ -623,6 +645,11 @@ void CMainBase12::myPopupPosInit()
     PopInfoPos[SYS_POPUP_TECH][VIEW_DIR_NORMAL]    = QRect(SYS_WID(609),SYS_HEI(623),SYS_WID(230),SYS_HEI(111));//竖屏，正屏
     PopInfoPos[SYS_POPUP_TECH][VIEW_DIR_LEFT]      = QRect(SYS_WID(666),SYS_HEI(590),SYS_WID(330),SYS_HEI(80));    //向左，90度
     PopInfoPos[SYS_POPUP_TECH][VIEW_DIR_RIGHT]     = QRect(SYS_WID(28),SYS_HEI(90),SYS_WID(330),SYS_HEI(80));//向右，90度
+
+    PopInfoPos[SYS_POPUP_NOTIFY][VIEW_DIR_R180]      = QRect(SYS_WID(635),SYS_HEI(90),SYS_WID(150),SYS_HEI(375));
+    PopInfoPos[SYS_POPUP_NOTIFY][VIEW_DIR_NORMAL]    = QRect(SYS_WID(850),SYS_HEI(200),SYS_WID(60),SYS_HEI(280));//竖屏，正屏
+    PopInfoPos[SYS_POPUP_NOTIFY][VIEW_DIR_LEFT]      = QRect(SYS_WID(200),SYS_HEI(114),SYS_WID(280),SYS_HEI(60));    //向左，90度
+    PopInfoPos[SYS_POPUP_NOTIFY][VIEW_DIR_RIGHT]     = QRect(SYS_WID(544),SYS_HEI(594),SYS_WID(280),SYS_HEI(60));//向右，90度
 
 }
 

@@ -1,4 +1,3 @@
-#include <QGraphicsView>
 #include <QGraphicsScene>
 #include <QTransform>
 #include <QMessageBox>
@@ -453,30 +452,10 @@ void CMainBaseNdt10::BuildLcdDisplay()
 }
 void CMainBaseNdt10::mySceneInit()
 {
-    /*
-    pSceneArray[SYS_POPUP_REQUEST] = new QGraphicsScene(this);
-    pSceneArray[SYS_POPUP_REQUEST]->addWidget(RsMgr->g_systemClient);
-*/
 
 }
 void CMainBaseNdt10::myViewInit()
 {
-
-    //弹出信息
-    //    viewPopup   = new QGraphicsView(this);
-    //    viewPopup->setObjectName(QString::fromUtf8("viewPopup"));
-    //    viewPopup->setGeometry(PopInfoPos[SYS_POPUP_REQUEST][VIEW_DIR_R180]);
-    //    viewPopup->setFocusPolicy(Qt::NoFocus);
-    //    viewPopup->setFrameShape(QFrame::NoFrame);
-    //    viewPopup->setFrameShadow(QFrame::Plain);
-    //    viewPopup->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    //    viewPopup->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    //    viewPopup->setAlignment(Qt::AlignLeading | Qt::AlignLeft | Qt::AlignTop);
-    //    viewPopup->setViewportUpdateMode(QGraphicsView::BoundingRectViewportUpdate);
-    //    viewPopup->setStyleSheet("background:transparent");
-    //    viewPopup->rotate(m_iViewSwitch[VIEW_DIR_NORMAL][VIEW_DIR_RIGHT]);
-    //    viewPopup->raise();
-    //    viewPopup->hide();
 
 }
 void CMainBaseNdt10::myPopupPosInit()

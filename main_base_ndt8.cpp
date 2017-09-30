@@ -1,5 +1,3 @@
-#include <QGraphicsView>
-#include <QGraphicsScene>
 #include <QTransform>
 #include <QMessageBox>
 #include <QVector3D>

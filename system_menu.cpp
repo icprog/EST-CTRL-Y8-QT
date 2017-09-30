@@ -185,7 +185,7 @@ void CSystemMenu::showEvent(QShowEvent *event)
     pBtnGroup[SYS_MENU_KEY]->setEnabled(g_systemDb->getSystemCfg("MENU/SYS_MENU_KEY"            ,false).toInt() != false);
     pBtnGroup[SYS_MENU_PLATFORM]->setEnabled(g_systemDb->getSystemCfg("MENU/SYS_MENU_PLATFORM"  ,false).toInt() != false);
     pBtnGroup[SYS_MENU_ADVANCE]->setEnabled(g_systemDb->getSystemCfg("MENU/SYS_MENU_ADVANCE"    ,false).toInt() != false);
-    pBtnGroup[SYS_MENU_NETWORK]->setEnabled(g_systemDb->getSystemCfg("MENU/SYS_MENU_NETWORK"    ,true).toInt() != false);
+    pBtnGroup[SYS_MENU_NETWORK]->setEnabled(g_systemDb->getSystemCfg("MENU/SYS_MENU_NETWORK"    ,false).toInt() != false);
 #endif
 
     //获取按键输入
