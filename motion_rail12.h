@@ -33,6 +33,7 @@ private:
 
 private slots:
     virtual void OnMotionFresh();
+    virtual void OnViewDirChange(int);      //显示视角切换
 };
 
 #endif // MOTION_RAIL12_H

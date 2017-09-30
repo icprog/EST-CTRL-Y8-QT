@@ -42,6 +42,7 @@ CFaceBase10::CFaceBase10( QWidget* parent):
     versionView->setGeometry(SYS_WID(680 ),0,SYS_WID(100),g_sysWidth);
     versionView->rotate(90);
 
+     progressBar->setGeometry(0, SYS_HEI(0),  SYS_WID(400), SYS_HEI(40));
 }
 
 

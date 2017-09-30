@@ -468,7 +468,6 @@
         <file>QRes/com12/icon_run_up_0.png</file>
         <file>QRes/com12/icon_run_left_0.png</file>
         <file>QRes/com12/icon_run_right_0.png</file>
-        <file>QRes/com12/face.png</file>
         <file>QRes/com12/icon_turn_left_0.png</file>
         <file>QRes/com12/icon_turn_right_0.png</file>
         <file>QRes/com12/generator_base_001.png</file>
@@ -488,5 +487,8 @@
         <file>QRes/com12/sys_curtain_off.png</file>
         <file>QRes/com12/icon_system_tech_on.png</file>
         <file>QRes/com12/icon_system_tech_off.png</file>
+        <file>QRes/com12/face-v.png</file>
+        <file>QRes/com12/face-r.png</file>
+        <file>QRes/com12/face-l.png</file>
     </qresource>
 </RCC>

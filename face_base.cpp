@@ -37,7 +37,7 @@ CFaceBase::CFaceBase(QWidget *parent) :
     progressBar = new QProgressBar();       //初始化进度条
     progressBar->setStyleSheet("QProgressBar{ background-color: black; text-align: center;color:red}"
                                "QProgressBar::chunk {background-color: green;width: 10px;margin: 1px;}");
-    progressBar->setGeometry(0, SYS_HEI(0),  SYS_WID(400), SYS_HEI(40));
+    //progressBar->setGeometry(0, SYS_HEI(0),  SYS_WID(400), SYS_HEI(40));
     progressBar->setRange(0,SYS_START_FINISH);
     progressBar->setValue(0);
     progressBar->raise();
@@ -62,7 +62,7 @@ CFaceBase::CFaceBase(QWidget *parent) :
     versionScene   = new QGraphicsScene();     //用于消息显示的场景
     versionScene->addWidget(stHospital);
 
-    //stHospital->setGeometry(0, 0, g_sysWidth, SYS_HEI(80));
+    stHospital->setGeometry(0, 0, g_sysWidth, SYS_HEI(80));
     stHospital->setGeometry(20, 0, g_sysWidth, SYS_HEI(80));
     versionView    = new QGraphicsView(this);  //用于消息显示的视图
     versionView->setFocusPolicy(Qt::NoFocus);
@@ -82,6 +82,37 @@ CFaceBase::CFaceBase(QWidget *parent) :
     connect(timerStartFinish,SIGNAL(timeout()),this,SLOT(OnStartFinish()));
 
     setVisible(false);
+
+    OnViewDirChange(g_systemDb->g_startAngle);
+}
+
+void CFaceBase::OnViewDirChange(int sAngle)
+{
+
+//    lbBackGround->setGeometry(0, 0, g_sysWidth, g_sysHeight);
+//    lbBackGround->setStyleSheet(g_skinBase->GetStyleMapStr("SYS_STR_BACK_FACE"));
+//    stInfo->setGeometry(0, 0, g_sysWidth, SYS_HEI(50));
+//    progressBar->setGeometry(0, SYS_HEI(0),  SYS_WID(400), SYS_HEI(40));
+//    stHospital->setGeometry(20, 0, g_sysWidth, SYS_HEI(80));
+
+    switch(sAngle)
+    {
+    case VIEW_DIR_NORMAL:
+
+        break;
+    case VIEW_DIR_LEFT:
+
+        break;
+    case VIEW_DIR_RIGHT:
+
+        break;
+    case VIEW_DIR_R180:
+        break;
+    default:
+        break;
+
+    }
+
 }
 
 void CFaceBase::setProgressBar(int mPercent)
@@ -99,7 +130,7 @@ void CFaceBase::setProgressBar(int mPercent)
     QCoreApplication::processEvents();
 
     //测试启动画面，延时
-    //QTest::qSleep(250);
+    QTest::qSleep(250);
 }
 
 void CFaceBase::showEvent(QShowEvent *)
@@ -150,3 +181,4 @@ void CFaceBase::OnStartFinish()
     RsMgr->InitView(g_dbsys.utility.mPlatform,INIT_STAGE_1);
     RsMgr->InitSlot(INIT_STAGE_1);
 }
+

@@ -61,7 +61,7 @@ private:
 public:
     int GetGenKv();
 
-private slots:
+public slots:
 
     void OnParameterPressed();
     void OnBodyPressed();
@@ -75,6 +75,7 @@ private slots:
 
     void OnGenTechChange(int tech);
 
+    virtual void OnViewDirChange(int);      //显示视角切换
 signals:
     void ParamShow(int);
     void PopupShow(int);

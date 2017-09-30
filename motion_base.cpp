@@ -60,3 +60,6 @@ void CMotionBase::mousePressEvent(QMouseEvent */*event*/)
 {
     qDebug()<<"CNetBase::mousePressEvent";
 }
+void CMotionBase::OnViewDirChange(int )
+{
+}

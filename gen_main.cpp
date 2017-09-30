@@ -327,3 +327,6 @@ void CGenMain::OnParamChange(int type,int val)
 
     emit BodyIndexChange(m_iBodyIdx);
 }
+void CGenMain::OnViewDirChange(int )
+{
+}

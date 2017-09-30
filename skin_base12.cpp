@@ -17,7 +17,9 @@ CSkinBase12::CSkinBase12()
     pMapStr.insert("BASE8_STR_SMART_05" ,"QPushButton{border-image: url(:QRes/com12/icon_smartpos_03_up.png);}");
 
     pMapStr.insert("BASE12_TUBE_ANGEL_BACK" ,"QFrame{border-image: url(:QRes/com12/icon_tube_angle_back.png);}");
-    pMapStr.insert("SYS_STR_BACK_FACE"      ,"QFrame{border-image: url(:QRes/com12/face.png);}");
+    pMapStr.insert("SYS_STR_BACK_FACE_V"    ,"QFrame{border-image: url(:QRes/com12/face-v.png);}");
+    pMapStr.insert("SYS_STR_BACK_FACE_L"    ,"QFrame{border-image: url(:QRes/com12/face-l.png);}");
+    pMapStr.insert("SYS_STR_BACK_FACE_R"    ,"QFrame{border-image: url(:QRes/com12/face-r.png);}");
     pMapStr.insert("SYS_GEN_BASE"           ,"QFrame {border-image: url(:QRes/com12/generator_base_001.png)}");
     pMapStr.insert("CEIL8_TITLE_LOGO"       ,"QLabel {border-image: url(:QRes/com12/icon_title_logo.png);}");
     pMapStr.insert("BASE8_TITLE_BACK"       ,"QLabel {border-image: url(:QRes/com12/icon_title_back.png);}");

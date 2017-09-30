@@ -46,10 +46,11 @@ protected:
     QGraphicsScene  * versionScene;
     QGraphicsView   * versionView;
 
-private slots:
+public slots:
 
     void OnStartUp();                   //软件初始化函数，由定时器启动
     void OnStartFinish();                   //软件初始化函数，由定时器启动
+    virtual void OnViewDirChange(int);      //显示视角切换
 };
 
 #endif // FACE_BASE_H

@@ -36,4 +36,6 @@ CFaceBase8::CFaceBase8( QWidget* parent):
 
     barView->setGeometry(0,SYS_HEI(555),g_sysWidth,SYS_HEI(50));
 
+    progressBar->setGeometry(0, SYS_HEI(0),  SYS_WID(400), SYS_HEI(40));
+
 }

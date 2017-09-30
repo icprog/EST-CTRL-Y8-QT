@@ -53,6 +53,7 @@ protected:
 
 public slots:
     virtual void OnMotionFresh();
+    virtual void OnViewDirChange(int);      //显示视角切换
 };
 
 #endif // MOTION_BASE_H
