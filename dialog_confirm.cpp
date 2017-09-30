@@ -4,6 +4,7 @@
 CDialogConFirm::CDialogConFirm(QWidget *parent) :
     QWidget(parent)
 {
+    setObjectName("CDialogConFirm");
 
     setStyleSheet("QWidget{background : transparent;}");
 

@@ -8,6 +8,8 @@
 
 CCurtainMgr::CCurtainMgr()
 {
+    setObjectName("CCurtainMgr");
+
     mCurtainBase = 0;
 }
 

@@ -5,7 +5,7 @@ CCurtainBase8::CCurtainBase8(QWidget *parent) :
     CCurtainBase(parent)
 {
 
-    setObjectName("CExitBase8");
+    setObjectName("CCurtainBase8");
 
     resize(SYS_WID(90),SYS_HEI(50));
 

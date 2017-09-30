@@ -4,6 +4,8 @@
 CButtonStable::CButtonStable(QWidget *parent)
     :QPushButton(parent)
 {
+    setObjectName("CButtonStable");
+
     setAutoFillBackground(true);
     setStyleSheet("background-color : lightGray ; border : 1px solid black");
 }

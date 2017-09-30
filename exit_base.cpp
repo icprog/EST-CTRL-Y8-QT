@@ -4,6 +4,7 @@
 CExitBase::CExitBase(QWidget *parent) :
     QWidget(parent)
 {
+    setObjectName("CExitBase");
 
     pbSystemExit = new QPushButton(this);
 

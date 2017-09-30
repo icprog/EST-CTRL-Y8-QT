@@ -46,6 +46,8 @@
 CButtonRender::CButtonRender(const QPainterPath &path, QWidget *parent)
     : QWidget(parent), mPath(path)
 {
+    setObjectName("CButtonRender");
+
     penWidth = 1;
     rotationAngle = 0;
     m_iPressed = false;

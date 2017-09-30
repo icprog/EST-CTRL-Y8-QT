@@ -4,6 +4,7 @@
 CCurtainBase::CCurtainBase(QWidget *parent) :
     QWidget(parent)
 {
+    setObjectName("CCurtainBase");
 
     pbCurtainSwitch = new QPushButton(this);
 

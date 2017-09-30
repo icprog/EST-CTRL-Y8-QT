@@ -4,6 +4,8 @@
 CDebugBase::CDebugBase(QWidget *parent) :
     CSystemBase(parent)
 {
+    setObjectName("CDebugBase");
+
     m_lLimitBuf = 0;        //默认参数
     m_iMotorMax = 0;        //默认参数
     m_iBtnIdx   = -1;       //无效

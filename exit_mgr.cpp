@@ -9,6 +9,8 @@
 
 CExitMgr::CExitMgr()
 {
+    setObjectName("CExitMgr");
+
     mPowerBase = 0;
 }
 
