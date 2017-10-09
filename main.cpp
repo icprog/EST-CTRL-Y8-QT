@@ -4,12 +4,12 @@
 #include <QFontDatabase>
 #include <QDesktopServices>
 
-#include "thread_joystick.h"
-#include "thread_touchscreen.h"
+#include "./ndt08/thread_joystick.h"
+#include "./base/thread_touchscreen.h"
 #include "resource_manager.h"
 
-
-void myScreenCheck();                       //屏幕分辨率检测
+void AutoRunCfg();                          //自动运行检测配置
+void ScreenCheck();                         //屏幕分辨率检测
 void ApplyLanguage(unsigned char nLang);    //翻译文件加载
 
 //消息处理机制
@@ -60,7 +60,7 @@ int main( int argc, char *argv[] )//主程序
 
     g_systemDb->Init_DataBase();
 
-    myScreenCheck();
+    ScreenCheck();
 
     ////for test  only
     ////PF_CEIL_10_A;PF_UARM_10_A;PF_RAIL_12_A;PF_CEIL_10_B;PF_NDT_10_A
@@ -124,12 +124,14 @@ int main( int argc, char *argv[] )//主程序
 
 #endif
 
+    AutoRunCfg();                          //自动运行检测配置
+
     return a.exec();
 }
 
 //本程序设计，必须g_sysWidth > g_sysHeight,否则显示异常
 //分辨率需要接近4:3
-void myScreenCheck()
+void ScreenCheck()
 {
     QDesktopWidget* desktopWidget = QApplication::desktop();
 
@@ -186,23 +188,6 @@ void SaveTranslateFile()
 //print system font database
 void ApplyLanguage(unsigned char nLang)
 {  
-    QFontDatabase database;
-
-    foreach (const QString &family, database.families())
-    {
-        //fprintf(stderr,"family=%s\n",family.toLocal8Bit().data());
-
-        foreach (const QString &style, database.styles(family))
-        {
-            //fprintf(stderr,"  style=%s\n",style.toLocal8Bit().data());
-
-            QString sizes;
-            foreach (int points, database.smoothSizes(family, style))
-                sizes += QString::number(points) + " ";
-
-            //fprintf(stderr,"    sizes=%s\n",sizes.toLocal8Bit().data());
-        }
-    }
 
     SaveTranslateFile();
 
@@ -229,6 +214,33 @@ void ApplyLanguage(unsigned char nLang)
 
     qApp->installTranslator(g_mTranslator);
 
+}
+//自动运行检测配置
+//检测特定文件的存在，并执行该文件
+void AutoRunCfg()
+{
+    //如果关闭了该功能，退出，不继续执行
+    if(!g_mainCfg->value("AutoRunEnable",true).toInt())
+        return;
+
+    QString mStr = "/udisk/";
+    mStr.append(g_dbsys.dbsystem.machine2);
+    mStr.append("/autorun.txt");
+
+    if(!QFile::exists(mStr))
+        return;
+
+    QString mStrBuf = "mv ";
+    mStrBuf.append(mStr.toLatin1().data());
+    mStrBuf.append(" ");
+    mStrBuf.append(mStr.toLatin1().data());
+    mStrBuf.append(".bak");
+
+    //执行自动运行
+    system(mStr.toLatin1().data());
+
+    //将该文件增加后缀，防止再次运行
+    system(mStrBuf.toLatin1().data());
 }
 
 #if (QT_VERSION >= QT_VERSION_CHECK(5, 0, 0))

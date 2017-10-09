@@ -40,16 +40,11 @@ CMainFrame::CMainFrame( QWidget* parent):
     internalTimer = new QTimer(this);
     connect( internalTimer, SIGNAL(timeout()), SLOT(OnMainFresh()));
 
-    pFrTest = new QFrame(this);
-    pFrTest->setStyleSheet("background-color:white;");
-    pFrTest->setGeometry(0,0,10,10);
-    pFrTest->setVisible(false);
 }
 
-void CMainFrame::mousePressEvent(QMouseEvent *event)
+void CMainFrame::mousePressEvent(QMouseEvent */*event*/)
 {
-    qDebug()<<"CMainFrame::mousePressEvent";
-    pFrTest->move(event->x(),event->y());
+    //qDebug()<<"CMainFrame::mousePressEvent";
 }
 void CMainFrame::OnViewChange(int view)
 {

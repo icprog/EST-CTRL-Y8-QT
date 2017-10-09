@@ -2,10 +2,10 @@
 #define CTHREADREMOTE_H
 
 #include <QObject>
-#include <QSqlQuery>
-#include <QSqlDatabase>
-#include <QSqlDriver>
-#include <QSqlError>
+//#include <QSqlQuery>
+//#include <QSqlDatabase>
+//#include <QSqlDriver>
+//#include <QSqlError>
 
 //init sql database
 //send data to sql server
@@ -18,8 +18,8 @@ public:
     explicit CThreadRemoteWorker(QObject *parent = 0);
 
 private:
-    QSqlDatabase mMainDb;
-    QSqlQuery *mQuery;
+    //QSqlDatabase mMainDb;
+    //QSqlQuery *mQuery;
 
     QString mServerAddr;
     int mServerPort;
@@ -33,9 +33,9 @@ private:
 
 
 public slots:
-    void keySendTest(unsigned short);
-    void ValSendTest(unsigned short*);
-    bool SqlDbInit();
+    //void keySendTest(unsigned short);
+    //void ValSendTest(unsigned short*);
+    //bool SqlDbInit();
 
 signals:
     void WorkerRes(int , const QString &);

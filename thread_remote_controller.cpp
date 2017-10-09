@@ -21,7 +21,7 @@ void CThreadRemoteController::threadStart()
     connect(worker,SIGNAL(WorkerRes(int , const QString &)), this, SLOT(FuncWorkerRes(int , const QString &)));
     connect(RsMgr->g_smartBase,    SIGNAL(ComKeyCommand(unsigned short)),worker,SLOT(keySendTest(unsigned short)));
     connect(g_taskComCtrl,    SIGNAL(ChxValData(unsigned short *)),worker,SLOT(ValSendTest(unsigned short *)));
-    connect(this, SIGNAL(SqlInit()), worker, SLOT(SqlDbInit()));
+    //connect(this, SIGNAL(SqlInit()), worker, SLOT(SqlDbInit()));
 
     workerThread.start();
 

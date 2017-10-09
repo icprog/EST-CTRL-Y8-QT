@@ -8,8 +8,8 @@
 #include <QLabel>
 #include <QTimer>
 
-#include "button_stable.h"
-#include "system_defines.h"
+#include "./base/button_stable.h"
+#include "./system/system_defines.h"
 
 #define SETTING_SCENCE_MAX       ( 64 )
 

@@ -5,7 +5,7 @@
 #include <QGraphicsProxyWidget>
 #include <QWidget>
 
-#include "system_defines.h"
+#include "./system/system_defines.h"
 
 
 #define MAINFRAME_SCENE_MAX           (5)
@@ -28,8 +28,6 @@ protected:
     void mousePressEvent(QMouseEvent *event);
 
 private:
-
-    QFrame * pFrTest;
 
     QTimer *internalTimer;
 

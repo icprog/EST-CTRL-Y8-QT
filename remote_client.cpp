@@ -2,10 +2,10 @@
 #include "resource_manager.h"
 #include <QSettings>
 
-#include <QSqlDriver>
-#include <QSqlDatabase>
+//#include <QSqlDriver>
+//#include <QSqlDatabase>
 #include <QDebug>
-#include <QSqlError>
+//#include <QSqlError>
 #include <QTextCodec>
 
 #define TCP_SLAVE_PORT      52430
@@ -140,7 +140,7 @@ CRemoteClient::CRemoteClient(QWidget *parent) :
     //database connection is too slow, use thread instead.
     //DbInit();
 }
-
+/*
 void CRemoteClient::DbInit()
 {
     if(!QFile::exists(QCoreApplication::applicationDirPath() +"/clientinfo.ini"))
@@ -169,7 +169,7 @@ void CRemoteClient::DbInit()
     }
 
 }
-
+*/
 void CRemoteClient::InitNetworkClient()
 {
     tcpClient = new QTcpSocket();

@@ -5,86 +5,86 @@
 #include <QApplication>
 #include <QSettings>
 
-#include "face_base.h"      /*软件初始化显示界面*/
-#include "face_mgr.h"
-#include "smart_base.h"     /*弹出式快捷按钮*/
-#include "smart_mgr.h"
-#include "status_base.h"    /*位置信息显示*/
-#include "status_mgr.h"
-#include "film_base.h"      /*薄膜按键扫描*/
-#include "film_mgr.h"
-#include "key_base.h"       /*屏幕按键处理*/
-#include "key_mgr.h"
-#include "fast_base.h"      /*快捷界面触发控件*/
-#include "fast_mgr.h"
-#include "info_base.h"      /*信息显示控制*/
-#include "info_mgr.h"
-#include "tech_base.h"      /*发生器技术选择控制*/
-#include "tech_mgr.h"
-#include "menu_base.h"      /*主界面菜单控制*/
-#include "menu_mgr.h"
-#include "title_base.h"     /*8寸屏标题，10寸屏顶部背景*/
-#include "title_mgr.h"
-#include "exit_base.h"      /*系统退出按钮控制，主要用于安卓系统*/
-#include "exit_mgr.h"
-#include "sim_base.h"       /*系统运动模拟控制*/
-#include "sim_mgr.h"
-#include "motion_base.h"    /*系统运动动画控制*/
-#include "motion_mgr.h"
-#include "net_server_base.h"
-#include "net_mgr.h"        /*系统网络通信模块*/
-#include "net_client_base.h"
-#include "motor_base.h"
-#include "motor_mgr.h"      /*电机位置校正模块*/
-#include "motor_menu.h"
-#include "gen_main.h"
-#include "gen_config.h"
-#include "gen_aec.h"
-#include "gen_focus.h"      /*发生器参数控制模块*/
-#include "gen_param.h"
-#include "gen_param_mgr.h"
-#include "gen_client.h"
-#include "quick_base.h"     /*固定式快捷按钮*/
-#include "quick_mgr.h"
+#include "./base/face_base.h"      /*软件初始化显示界面*/
+#include "./mgr/face_mgr.h"
+#include "./base/smart_base.h"     /*弹出式快捷按钮*/
+#include "./mgr/smart_mgr.h"
+#include "./base/status_base.h"    /*位置信息显示*/
+#include "./mgr/status_mgr.h"
+#include "./base/film_base.h"      /*薄膜按键扫描*/
+#include "./mgr/film_mgr.h"
+#include "./base/key_base.h"       /*屏幕按键处理*/
+#include "./mgr/key_mgr.h"
+#include "./base/fast_base.h"      /*快捷界面触发控件*/
+#include "./mgr/fast_mgr.h"
+#include "./base/info_base.h"      /*信息显示控制*/
+#include "./mgr/info_mgr.h"
+#include "./base/tech_base.h"      /*发生器技术选择控制*/
+#include "./mgr/tech_mgr.h"
+#include "./base/menu_base.h"      /*主界面菜单控制*/
+#include "./mgr/menu_mgr.h"
+#include "./base/title_base.h"     /*8寸屏标题，10寸屏顶部背景*/
+#include "./mgr/title_mgr.h"
+#include "./base/exit_base.h"      /*系统退出按钮控制，主要用于安卓系统*/
+#include "./mgr/exit_mgr.h"
+#include "./base/sim_base.h"       /*系统运动模拟控制*/
+#include "./mgr/sim_mgr.h"
+#include "./base/motion_base.h"    /*系统运动动画控制*/
+#include "./mgr/motion_mgr.h"
+#include "./base/net_server_base.h"
+#include "./mgr/net_mgr.h"        /*系统网络通信模块*/
+#include "./base/net_client_base.h"
+#include "./base/motor_base.h"
+#include "./mgr/motor_mgr.h"      /*电机位置校正模块*/
+#include "./base/motor_menu.h"
+#include "./gen/gen_main.h"
+#include "./gen/gen_config.h"
+#include "./gen/gen_aec.h"
+#include "./gen/gen_focus.h"      /*发生器参数控制模块*/
+#include "./gen/gen_param.h"
+#include "./mgr/gen_param_mgr.h"
+#include "./gen/gen_client.h"
+#include "./base/quick_base.h"     /*固定式快捷按钮*/
+#include "./mgr/quick_mgr.h"
 #include "remote_client.h"  /*远程查看与控制*/
 #include "remote_server.h"
 
-#include "system_advance.h"     /*高级设定页面*/
-#include "system_imepad.h"      /*虚拟按键页面*/
-#include "system_password.h"    /*系统设定密码页面*/
-#include "system_password2.h"    /*系统设定密码页面,new*/
-#include "system_menu.h"        /*系统主菜单页面*/
-#include "system_speed.h"       /*电机速度设定页面*/
-#include "system_smart.h"       /*系统快捷位置设定*/
-#include "system_config.h"      /*系统配置页面*/
-#include "system_update.h"      /*系统升级页面*/
-#include "debug_page1.h"
-#include "debug_page2.h"        /*系统调试界面*/
-#include "system_install.h"     /*分期付款设置页面*/
-#include "system_install2.h"     /*分期付款设置页面,new*/
-#include "system_confirm.h"     /*密码到期确认界面*/
-#include "system_confirm2.h"     /*密码到期确认界面,new*/
-#include "system_self_run.h"    /*系统自运行页面*/
-#include "system_platform.h"    /*系统平台切换页面*/
-#include "system_network.h"     /*网络相关设定*/
-#include "system_light_curtain.h"/*光幕控制界面*/
-#include "system_console1.h"
-#include "curtain_mgr.h"        /*光幕开关*/
+#include "./system/system_advance.h"     /*高级设定页面*/
+#include "./system/system_imepad.h"      /*虚拟按键页面*/
+#include "./system/system_password.h"    /*系统设定密码页面*/
+#include "./system/system_password2.h"    /*系统设定密码页面,new*/
+#include "./system/system_menu.h"        /*系统主菜单页面*/
+#include "./system/system_speed.h"       /*电机速度设定页面*/
+#include "./system/system_smart.h"       /*系统快捷位置设定*/
+#include "./system/system_config.h"      /*系统配置页面*/
+#include "./system/system_update.h"      /*系统升级页面*/
+#include "./system/debug_page1.h"
+#include "./system/debug_page2.h"        /*系统调试界面*/
+#include "./system/system_install.h"     /*分期付款设置页面*/
+#include "./system/system_install2.h"     /*分期付款设置页面,new*/
+#include "./system/system_confirm.h"     /*密码到期确认界面*/
+#include "./system/system_confirm2.h"     /*密码到期确认界面,new*/
+#include "./system/system_self_run.h"    /*系统自运行页面*/
+#include "./system/system_platform.h"    /*系统平台切换页面*/
+#include "./system/system_network.h"     /*网络相关设定*/
+#include "./system/system_light_curtain.h"/*光幕控制界面*/
+#include "./system/system_console1.h"
+#include "./mgr/curtain_mgr.h"        /*光幕开关*/
 
-#include "sys_database.h"
-#include "task_can.h"
-#include "task_com_ctrl.h"
-#include "task_com_key.h"
-#include "task_monitor.h"
+#include "./system/sys_database.h"
+#include "./base/task_can.h"
+#include "./base/task_com_ctrl.h"
+#include "./base/task_com_key.h"
+#include "./base/task_monitor.h"
 
-#include "main_base.h"      /**/
-#include "main_mgr.h"
+#include "./base/main_base.h"      /**/
+#include "./mgr/main_mgr.h"
 #include "main_frame.h"
 #include "main_setting.h"
 
-#include "system_general.h"
-#include "system_client_request.h"
-#include "skin_manager.h"
+#include "./system/system_general.h"
+#include "./system/system_client_request.h"
+#include "./mgr/skin_mgr.h"
 
 #include "thread_remote_controller.h"
 

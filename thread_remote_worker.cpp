@@ -9,9 +9,9 @@ CThreadRemoteWorker::CThreadRemoteWorker(QObject *parent) : QObject(parent)
 {
     qDebug()<<"CThreadRemoteWorker init thread:"<<QThread::currentThread();
 
-    mQuery = NULL;
+    //mQuery = NULL;
 }
-
+/*
 bool CThreadRemoteWorker::SqlDbInit()
 {
     qDebug()<<"CThreadRemoteWorker run thread:"<<QThread::currentThread();
@@ -60,6 +60,8 @@ bool CThreadRemoteWorker::SqlDbInit()
         return false;
     }
 }
+*/
+/*
 void CThreadRemoteWorker::ValSendTest(unsigned short *pVal)
 {
 
@@ -84,6 +86,8 @@ void CThreadRemoteWorker::ValSendTest(unsigned short *pVal)
         qDebug() <<  mQuery->lastError();
 
 }
+*/
+/*
 void CThreadRemoteWorker::keySendTest(unsigned short knew)
 {
 
@@ -104,4 +108,5 @@ void CThreadRemoteWorker::keySendTest(unsigned short knew)
         qDebug() <<  mQuery->lastError();
 
 }
+*/
 

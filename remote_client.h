@@ -1,9 +1,9 @@
 #ifndef REMOTE_CLIENT_H
 #define REMOTE_CLIENT_H
-#include <QSqlQuery>
-#include <QSqlDatabase>
+//#include <QSqlQuery>
+//#include <QSqlDatabase>
 
-#include "remote_base.h"
+#include "./base/remote_base.h"
 
 #define UPDATE_STATE_CONNECT 0
 #define UPDATE_STATE_ID      1
@@ -48,8 +48,8 @@ private:
 
     int PutStrToBuf(QString &,unsigned short *);
 
-    QSqlDatabase mMainDb;
-    void DbInit();
+    //QSqlDatabase mMainDb;
+    //void DbInit();
 private:
     QLabel * pLbServerAddr;         /*服务器地址*/
     QLabel * pLbClientId;           /*客户端ID*/

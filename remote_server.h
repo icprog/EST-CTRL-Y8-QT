@@ -1,7 +1,7 @@
 #ifndef REMOTE_SERVER_H
 #define REMOTE_SERVER_H
 
-#include "remote_base.h"
+#include "./base/remote_base.h"
 
 
 class CRemoteServer : public CRemoteBase
