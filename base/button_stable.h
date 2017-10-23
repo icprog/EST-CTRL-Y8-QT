@@ -2,8 +2,10 @@
 #define BUTTON_STABLE_H
 
 #include <QPushButton>
-#include <QMouseEvent>
-
+QT_BEGIN_NAMESPACE
+class QMouseEvent;
+//#include <QMouseEvent>
+QT_END_NAMESPACE
 /*1.防止按键抖动的Button，方法是不处理任何MouseMove事件*/
 /*2.按下会触发声音，方法是调用声音函数*/
 class CButtonStable : public QPushButton

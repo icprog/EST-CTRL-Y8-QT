@@ -417,9 +417,12 @@ void CMainBaseNdt8::keyPressEvent(QKeyEvent * event)
         return;
     }
 
-    SendNdt8KeyPress(event->key());
-
     RsMgr->g_filmBase->SetKeySound();
+
+    if(g_dbsys.operation.bTimeout)              //如果系统认为过期，不进行后续操作
+        return;
+
+    SendNdt8KeyPress(event->key());
 }
 
 void CMainBaseNdt8::keyReleaseEvent(QKeyEvent *event)

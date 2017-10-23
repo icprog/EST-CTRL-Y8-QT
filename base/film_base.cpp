@@ -626,6 +626,7 @@ void CFilmBase::filmKeyExecute(unsigned short mKeyPhisic)
 
     if(g_dbsys.operation.bTimeout)              //如果系统认为过期，不进行后续操作
         return;
+
     if(g_dbsys.operation.bStopRunMach)              //如果系统认为过期，不进行后续操作
         return;
 

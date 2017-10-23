@@ -65,9 +65,9 @@ int main( int argc, char *argv[] )//主程序
     ////for test  only
     ////PF_CEIL_10_A;PF_UARM_10_A;PF_RAIL_12_A;PF_CEIL_10_B;PF_NDT_10_A
     ////PF_CEIL_08_A;PF_UARM_08_A;PF_RAIL_08_A;PF_RF_8_A;PF_NDT_8_A
-    //g_dbsys.utility.mPlatform = PF_CEIL_10_B;
-    //g_dbsys.utility.mNetTcpMode = TARGET_TCP_CLIENT;
-    //g_dbsys.utility.mNetShow = 1;
+    g_dbsys.utility.mPlatform = PF_NDT_8_A;
+    g_dbsys.utility.mNetTcpMode = TARGET_TCP_CLIENT;
+    g_dbsys.utility.mNetShow = 1;
 
     ApplyLanguage(g_dbsys.dbsystem.language);               //语言
 
@@ -111,8 +111,8 @@ int main( int argc, char *argv[] )//主程序
     }
 
 #ifdef QT_ARCH_ARM                                          //基于tslib触控屏扫描线程，ARM板的触控
-    CThreadTouchScreen tCtp;
-    tCtp.start();
+   // CThreadTouchScreen tCtp;
+   // tCtp.start();
 #endif
 
 #ifndef Q_OS_ANDROID

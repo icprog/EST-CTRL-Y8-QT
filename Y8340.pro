@@ -114,7 +114,7 @@ HEADERS += \
     ndt08/main_base_ndt8.h \
     ndt08/info_base_ndt8.h \
     ndt08/thread_joystick.h \
-    ndt08/libusb-1.0.21/libusb/libusb.h \
+    #ndt08/libusb-1.0.21/libusb/libusb.h \
     gen/gen_param.h \
     gen/gen_main.h \
     gen/gen_focus.h \
@@ -361,16 +361,16 @@ SOURCES += \
     ndt10/button_render.cpp \
     ndt10/system_mech.cpp \
     ndt08/thread_joystick.cpp \
-    ndt08/libusb-1.0.21/libusb/sync.c \
-    ndt08/libusb-1.0.21/libusb/strerror.c \
-    ndt08/libusb-1.0.21/libusb/io.c \
-    ndt08/libusb-1.0.21/libusb/hotplug.c \
-    ndt08/libusb-1.0.21/libusb/descriptor.c \
-    ndt08/libusb-1.0.21/libusb/core.c \
-    ndt08/libusb-1.0.21/libusb/os/poll_posix.c \
-    ndt08/libusb-1.0.21/libusb/os/threads_posix.c \
-    ndt08/libusb-1.0.21/libusb/os/linux_usbfs.c \
-    ndt08/libusb-1.0.21/libusb/os/linux_netlink.c \
+    #ndt08/libusb-1.0.21/libusb/sync.c \
+    #ndt08/libusb-1.0.21/libusb/strerror.c \
+    #ndt08/libusb-1.0.21/libusb/io.c \
+    #ndt08/libusb-1.0.21/libusb/hotplug.c \
+    #ndt08/libusb-1.0.21/libusb/descriptor.c \
+    #ndt08/libusb-1.0.21/libusb/core.c \
+    #ndt08/libusb-1.0.21/libusb/os/poll_posix.c \
+    #ndt08/libusb-1.0.21/libusb/os/threads_posix.c \
+    #ndt08/libusb-1.0.21/libusb/os/linux_usbfs.c \
+    #ndt08/libusb-1.0.21/libusb/os/linux_netlink.c \
     ndt08/skin_ndt8.cpp \
     ndt08/sim_ndt8.cpp \
     ndt08/net_server_ndt8.cpp \

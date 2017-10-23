@@ -5,8 +5,7 @@
 #include <QThread>
 #include <QTimer>
 #include <QWidget>
-
-//#include "./libusb-1.0.21-x86/libusb/libusb.h"
+/*
 #include "./libusb-1.0.21/libusb/libusb.h"
 
 struct SKey
@@ -67,5 +66,5 @@ public slots:
     void OnTimerJoystickScan();
 
 };
-
+*/
 #endif // THREAD_JOYSTICK_H

@@ -10,6 +10,7 @@
 #define JOY_USB_PID         0x0006  /**/
 
 
+/*
 CThreadJoystick::CThreadJoystick(QWidget *parent) :
     QWidget(parent)
 {
@@ -255,4 +256,5 @@ void CThreadJoystick::JoystickBufInit()
     mJoykey.keyAU.val = 0x7f;
 
 }
+*/
 
